@@ -1,0 +1,20 @@
+CC = g++
+CFLAGS = -Wall -o
+TARGETS = hw2_p1 hw2_p2 hw2_p3 hw2_p4 hw2_p5 hw2_p6
+
+all: $(TARGETS)
+hw2_p1: hw2_p1.cpp
+   $(CC) $(CFLAGS) hw2_p1 hw2_p1.cpp
+hw2_p2: hw2_p2.cpp
+   $(CC) $(CFLAGS) hw2_p2 hw2_p2.cpp
+hw2_p3: hw2_p3/testWindGauge.cpp hw2_p3/WindGauge.h hw2_p3/WindGauge.cpp
+   $(CC) $(CFLAGS) hw2_p3 hw2_p3/testWindGauge.cpp hw2_p3/WindGauge.cpp hw2_p3/WindGauge.h
+hw2_p4: hw2_p4.cpp
+   $(CC) $(CFLAGS) hw2_p4 hw2_p4.cpp
+hw2_p5: hw2_p5.cpp
+   $(CC) $(CFLAGS) hw2_p5 hw2_p5.cpp
+hw2_p6: hw2_p6.cpp
+   $(CC) $(CFLAGS) hw2_p6 hw2_p6.cpp
+
+clean:
+   rm $(TARGETS)
