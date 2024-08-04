@@ -1,0 +1,17 @@
+1. bubbleSort(A[])  // Name of Function which uses an Array
+2.    n = length(A)    // Setting a variable to the size of the Array A
+3.    for i from 1 to n-1    // Iterated loop through elements
+4.        // Flag "swapped" is initialized to false
+5.        swapped = false
+6.        // Last i elements are in the correct place already
+7.        for j from 0 to n-i-1
+8.            // Compare the neighboring elements
+9.            if A[j] > A[j+1] then
+10.               // If elements are in wrong order, swap
+11.               swap(A[j], A[j+1])
+12.               swapped = true
+13.        // If no two elements were swapped, then break out of loop
+14.        if not swapped then // If Swapped == false
+15.            break
+16.    end for // ends for loop
+17. end bubbleSort() //end of function
