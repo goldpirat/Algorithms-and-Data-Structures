@@ -1,0 +1,21 @@
+a) Reference: hw4_p1.cpp
+
+b) The optimal scenario is described as a series of numbers already in order, the least favorable scenario as a series arranged in reverse to the desired sorting order (in this scenario, decreasing order), and the typical case involves a random assortment of numbers.
+
+See the graph in: hw4_p1.py
+
+c) Observing the graph for the optimal scenario, it is evident that as k becomes larger, the time required for computation diminishes. This outcome stems from the methodology of the hybrid sorting technique: with an increase in k, the algorithm predominantly employs Insertion Sort for organizing the number series, and conversely, it leans more on Merge Sort with a decrease in k. This aspect is particularly advantageous in the optimal scenario since Insertion Sort outperforms Merge Sort for sorting already ordered series, hence the reduced computation time for larger k values in the optimal scenario.
+
+Regarding the least favorable scenario, an optimal range of k values exists (approximately between 30-50 for a constant size of 100 elements) where the sorting shows utmost efficiency. These k values offer a balance; they are sufficiently minimal to utilize Insertion Sort for sorting smaller sequences (where Insertion outperforms Merge) but not so large to overly depend on Insertion Sort (where Merge is superior).
+
+In the typical case scenario, a similar pattern emerges; an optimal range for k values accelerates the algorithm, with the rationale mirroring that of the least favorable case. However, due to the randomness of the sequence, some variations occur.
+
+d) If the sequence's arrangement is known beforehand, selecting k values near n/3 (where optimal performance was noted) is advisable. This choice is predicated on the principle of preparing for the least favorable time computation scenario and because, at this juncture, the performance of the three scenarios depicted in the graph most closely aligns.
+
+This selection is further justified upon examining the asymptotic analysis of this amalgamated algorithm:
+    merge_insertion_sort = O(nk + nlog(n/k))
+
+Herein, the nk term derives from the time complexity of Insertion Sort, which is k^2. This is multiplied by n/k, representing the number of k-sized sequences, thus:
+    (n/k)*k^2 = nk
+
+Additionally, the term nlog(n/k) originates from Merge Sort's time complexity, nlog(n). The adjustment to n/k is due to this algorithm dividing n by 2 until reaching sequences of size k, rather than 1 as in standard Merge Sort.
